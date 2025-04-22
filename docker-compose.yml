@@ -1,17 +1,15 @@
-version: '3.8'
-
 services:
   frontend:
     build:
-      context: ./redordify_fe
+      context: ./recordify_fe
       dockerfile: Dockerfile
     ports:
       - "3000:3000"
     environment:
       - NODE_ENV=development
-      - VITE_API_URL=http://localhost:4000
+      - VITE_API_URL=http://backend:4000
     volumes:
-      - ./redordify_fe:/app
+      - ./recordify_fe:/app
       - /app/node_modules
     depends_on:
       - backend
