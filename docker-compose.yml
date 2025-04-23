@@ -7,8 +7,9 @@ services:
       - "3000:3000"
     environment:
       - NODE_ENV=development
-      - VITE_API_URL=http://localhost:4000
+      - VITE_API_URL=${VITE_API_URL}
       - GOOGLE_CLIENT_ID=${GOOGLE_CLIENT_ID}
+      - SESSION_SECRET=${SESSION_SECRET}
     volumes:
       - ./recordify_fe:/app
       - /app/node_modules
@@ -27,6 +28,7 @@ services:
       - DATABASE_URL=${DATABASE_URL}
       - GOOGLE_CLIENT_ID=${GOOGLE_CLIENT_ID}
       - JWT_SECRET=${JWT_SECRET}
+      - SESSION_SECRET=${SESSION_SECRET}
     volumes:
       - ./recordify_be:/app
       - /app/node_modules
