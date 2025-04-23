@@ -59,14 +59,27 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="flex flex-grow flex-col items-center justify-center gap-8 py-16">
-      <h1 className="text-2xl font-bold">Recordify Login</h1>
-      <p className="text-sm text-gray-500">Recordify서비스는 로그인이 필요합니다.</p>
-      <GoogleLogin
-        onSuccess={handleLoginSuccess}
-        onError={handleLoginError}
-        ux_mode="redirect"
-      />
+    <div className="flex min-h-full flex-grow flex-col items-center justify-center bg-gradient-to-br from-primary-light via-neutral to-white p-6">
+      <div className="w-full max-w-md p-6">
+        <div className="flex flex-col items-center gap-4">
+          <h1 className="text-center text-3xl font-bold text-primary">
+            로그인
+          </h1>
+          <p className="my-2 text-center text-base text-primary-dark">
+            Recordify의 모든 기능을 사용하려면
+            <br />
+            Google 계정이 필요합니다.
+          </p>
+          <div className="mt-4 w-full max-w-xs">
+            <GoogleLogin
+              onSuccess={handleLoginSuccess}
+              onError={handleLoginError}
+              ux_mode="redirect"
+              theme="filled_blue"
+            />
+          </div>
+        </div>
+      </div>
     </div>
   );
 } 

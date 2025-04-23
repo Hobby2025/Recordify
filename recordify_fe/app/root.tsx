@@ -104,7 +104,7 @@ export default function App() {
           <div className="max-w-xl mx-auto min-h-screen flex flex-col bg-white shadow-lg overflow-hidden">
             <Toaster position="bottom-center" />
             <Header />
-            <main className="flex flex-grow px-4 py-8 text-primary-dark overflow-y-auto">
+            <main className="flex flex-grow text-primary-dark overflow-y-auto">
               <Outlet />
             </main>
             <Footer />

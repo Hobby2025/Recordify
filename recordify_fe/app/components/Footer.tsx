@@ -2,7 +2,7 @@ import React from 'react';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-accent text-gray-700 py-2 px-4 mt-4">
+    <footer className="bg-accent text-gray-700 py-2 px-4">
       <div className="text-center relative text-white px-4 text-sm">
         <p>&copy; {new Date().getFullYear()} Recordify. All rights reserved.</p>
         <div className="absolute right-0 top-1/2 transform -translate-y-1/2 flex items-center">
