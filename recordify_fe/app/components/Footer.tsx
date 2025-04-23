@@ -6,7 +6,7 @@ const Footer: React.FC = () => {
       <div className="text-center relative text-white px-4 text-sm">
         <p>&copy; {new Date().getFullYear()} Recordify. All rights reserved.</p>
         <div className="absolute right-0 top-1/2 transform -translate-y-1/2 flex items-center">
-             <a href="https://github.com/recordify-ai" target="_blank" rel="noopener noreferrer" className="text-white hover:text-primary-dark">
+             <a href="https://github.com/hobby2025/recordify" target="_blank" rel="noopener noreferrer" className="text-white hover:text-primary-dark">
                <svg 
                  xmlns="http://www.w3.org/2000/svg" 
                  viewBox="0 0 16 16" 
