@@ -30,10 +30,14 @@ export async function loader({ request }: LoaderFunctionArgs) {
   const session = await getSession(request);
   const jwt = session.get("jwt");
   const message = session.get("globalMessage") || null;
+  const url = new URL(request.url);
+  const pathname = url.pathname;
+  console.log(`[Root Loader] Pathname: ${pathname}`);
 
   let user: { isLoggedIn: boolean; email?: string; picture?: string } = {
     isLoggedIn: false,
   };
+  let isValidJwt = false;
 
   if (jwt) {
     try {
@@ -45,16 +49,36 @@ export async function loader({ request }: LoaderFunctionArgs) {
           email: decoded.email,
           picture: decoded.picture,
         };
+        isValidJwt = true;
       } else {
-        console.warn("Expired JWT found in session cookie.");
+        console.warn("[Root Loader] Expired JWT found in session cookie.");
         session.unset("jwt");
       }
     } catch (error) {
-      console.error("Error decoding JWT from session cookie:", error);
+      console.error("[Root Loader] Error decoding JWT from session cookie:", error);
       session.unset("jwt");
     }
   }
+  console.log(`[Root Loader] isValidJwt: ${isValidJwt}`);
 
+  // Check if the user is logged in and trying to access a protected route
+  const shouldRedirect = !isValidJwt && pathname !== '/login';
+  console.log(`[Root Loader] Should redirect to /login? ${shouldRedirect}`);
+
+  if (shouldRedirect) {
+    console.log("[Root Loader] Redirecting to /login...");
+    const headers = new Headers();
+    const sessionCookie = await commitSession(session);
+    if (sessionCookie) {
+        headers.append("Set-Cookie", sessionCookie);
+        console.log("[Root Loader] Setting session cookie for redirect.");
+    } else {
+        console.warn("[Root Loader] No session cookie to set for redirect.");
+    }
+    return redirect("/login", { headers });
+  }
+
+  console.log("[Root Loader] Not redirecting. Returning JSON data.");
   return json(
     { googleClientId, user, message },
     {

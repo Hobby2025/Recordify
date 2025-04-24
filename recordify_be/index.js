@@ -71,6 +71,7 @@ fastify.post('/auth/google/callback', async (request, reply) => {
     return reply.send({ token });
 
   } catch (error) {
+    fastify.log.error({ msg: 'Google OAuth callback failed', error });
     return reply.status(500).send({ error: 'Authentication failed' });
   }
 });
