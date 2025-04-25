@@ -1,0 +1,63 @@
+/* Custom styles for react-datepicker */
+
+/* Make the calendar popup look more like Apple's style */
+.datepicker-custom .react-datepicker {
+  @apply border border-gray-200 rounded-lg shadow-lg font-sans text-sm;
+  /* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; */
+}
+
+.datepicker-custom .react-datepicker__header {
+  @apply bg-gray-100 border-b border-gray-200 rounded-t-lg pt-2 px-2 pb-1;
+}
+
+.datepicker-custom .react-datepicker__current-month,
+.datepicker-custom .react-datepicker-time__header,
+.datepicker-custom .react-datepicker-year-header {
+  @apply text-gray-800 font-semibold text-center mb-2;
+}
+
+.datepicker-custom .react-datepicker__navigation {
+  @apply top-2;
+}
+.datepicker-custom .react-datepicker__navigation--previous {
+  @apply border-r-gray-500 left-2;
+}
+.datepicker-custom .react-datepicker__navigation--next {
+  @apply border-l-gray-500 right-2;
+}
+
+.datepicker-custom .react-datepicker__day-name,
+.datepicker-custom .react-datepicker__day,
+.datepicker-custom .react-datepicker__time-name {
+  @apply w-8 h-8 leading-8 text-center m-0.5 rounded-full;
+}
+
+.datepicker-custom .react-datepicker__day {
+  @apply text-gray-700 hover:bg-gray-200;
+}
+
+.datepicker-custom .react-datepicker__day--selected,
+.datepicker-custom .react-datepicker__day--keyboard-selected {
+  @apply bg-blue-500 text-white hover:bg-blue-600;
+}
+
+.datepicker-custom .react-datepicker__day--today {
+    @apply font-semibold border border-blue-300; 
+}
+
+.datepicker-custom .react-datepicker__day--disabled {
+  @apply text-gray-300 cursor-not-allowed hover:bg-transparent;
+}
+
+/* Style the clear button (X) if needed */
+.clear-button-custom {
+    /* Example: Adjust position or appearance if needed */
+    /* right: 25px; */
+    /* top: 5px; */
+    /* background-color: red; */
+}
+
+/* Ensure calendar has higher z-index */
+.react-datepicker-popper {
+    z-index: 20; /* Adjust if needed */
+} 
