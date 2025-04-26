@@ -21,21 +21,20 @@ const Pagination: React.FC<PaginationProps> = ({ currentPage, totalPages, onPage
   }
 
   return (
-    <div className="mt-6 flex justify-center items-center space-x-4"> {/* Increased margin-top and spacing */}
+    <div className="mt-6 flex justify-between items-center space-x-4">
       {/* Previous Button */}
       <button
         onClick={() => onPageChange(currentPage - 1)}
         disabled={!canGoPrev}
         className={`${buttonBaseStyle} ${canGoPrev ? activeStyle : disabledStyle}`}
-        aria-label="Go to previous page"
+        aria-label="이전 페이지로 이동"
       >
-        {/* Simple Text or Icon - using text for now */}
-        Previous
+        이전
       </button>
 
       {/* Page Info */}
       <span className="text-sm text-gray-500 font-medium">
-        Page {currentPage} <span className="text-gray-400">of</span> {totalPages}
+        {currentPage} / {totalPages} 페이지
       </span>
 
       {/* Next Button */}
@@ -43,9 +42,9 @@ const Pagination: React.FC<PaginationProps> = ({ currentPage, totalPages, onPage
         onClick={() => onPageChange(currentPage + 1)}
         disabled={!canGoNext}
         className={`${buttonBaseStyle} ${canGoNext ? activeStyle : disabledStyle}`}
-        aria-label="Go to next page"
+        aria-label="다음 페이지로 이동"
       >
-        Next
+        다음
       </button>
     </div>
   );

@@ -54,8 +54,8 @@ const SearchBar: React.FC<SearchBarProps> = ({
           <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1.5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
           </svg>
-          {/* Display selected date or placeholder */}
-          <span className={value ? 'text-gray-700' : 'text-gray-400'}>{value || 'Any Date'}</span>
+          {/* Display selected date or placeholder (Translated) */}
+          <span className={value ? 'text-gray-700' : 'text-gray-400'}>{value || '모든 날짜'}</span>
       </button>
   ));
   CustomDateInput.displayName = 'CustomDateInput';
@@ -72,7 +72,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
       <div className="flex-grow">
         <input
           type="text"
-          placeholder="Search Recordings"
+          placeholder="녹음 검색"
           value={searchTerm}
           onChange={handleSearchTermChange}
           // Removed border, focus ring for seamless look. Added padding.
@@ -90,7 +90,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
             onChange={handleDateChange}
             dateFormat="yyyy-MM-dd"
             customInput={<CustomDateInput />} // Use the styled custom input
-            placeholderText="Any Date" // Placeholder in calendar input
+            placeholderText="모든 날짜"
             isClearable
             clearButtonClassName="clear-button-custom" // Assign class for custom styling
             calendarClassName="datepicker-custom" // Assign class for custom styling

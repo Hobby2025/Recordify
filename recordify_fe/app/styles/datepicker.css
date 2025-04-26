@@ -1,21 +1,24 @@
-/* Custom styles for react-datepicker */
+/* react-datepicker 커스텀 스타일 */
 
-/* Make the calendar popup look more like Apple's style */
+/* 달력 팝업을 Apple 스타일과 유사하게 만듭니다 */
 .datepicker-custom .react-datepicker {
   @apply border border-gray-200 rounded-lg shadow-lg font-sans text-sm;
-  /* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; */
+  /* 폰트 예시: font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; */
 }
 
+/* 헤더 스타일 */
 .datepicker-custom .react-datepicker__header {
   @apply bg-gray-100 border-b border-gray-200 rounded-t-lg pt-2 px-2 pb-1;
 }
 
+/* 현재 월 표시 */
 .datepicker-custom .react-datepicker__current-month,
 .datepicker-custom .react-datepicker-time__header,
 .datepicker-custom .react-datepicker-year-header {
   @apply text-gray-800 font-semibold text-center mb-2;
 }
 
+/* 이전/다음 달 네비게이션 */
 .datepicker-custom .react-datepicker__navigation {
   @apply top-2;
 }
@@ -26,38 +29,43 @@
   @apply border-l-gray-500 right-2;
 }
 
+/* 요일 이름, 날짜, 시간 이름 공통 스타일 */
 .datepicker-custom .react-datepicker__day-name,
 .datepicker-custom .react-datepicker__day,
 .datepicker-custom .react-datepicker__time-name {
   @apply w-8 h-8 leading-8 text-center m-0.5 rounded-full;
 }
 
+/* 일반 날짜 스타일 */
 .datepicker-custom .react-datepicker__day {
   @apply text-gray-700 hover:bg-gray-200;
 }
 
+/* 선택된 날짜 스타일 */
 .datepicker-custom .react-datepicker__day--selected,
 .datepicker-custom .react-datepicker__day--keyboard-selected {
   @apply bg-blue-500 text-white hover:bg-blue-600;
 }
 
+/* 오늘 날짜 스타일 */
 .datepicker-custom .react-datepicker__day--today {
     @apply font-semibold border border-blue-300; 
 }
 
+/* 비활성화된 날짜 스타일 */
 .datepicker-custom .react-datepicker__day--disabled {
   @apply text-gray-300 cursor-not-allowed hover:bg-transparent;
 }
 
-/* Style the clear button (X) if needed */
+/* 필요시 지우기 버튼(X) 스타일 */
 .clear-button-custom {
-    /* Example: Adjust position or appearance if needed */
+    /* 예시: 필요에 따라 위치나 모양 조정 */
     /* right: 25px; */
     /* top: 5px; */
     /* background-color: red; */
 }
 
-/* Ensure calendar has higher z-index */
+/* 달력이 다른 요소 위에 표시되도록 z-index 확인 */
 .react-datepicker-popper {
-    z-index: 20; /* Adjust if needed */
+    z-index: 20; /* 필요시 조정 */
 } 

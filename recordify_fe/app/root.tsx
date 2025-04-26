@@ -124,11 +124,11 @@ export default function App() {
           <Meta />
           <Links />
         </head>
-        <body className="bg-neutral">
+        <body className="bg-stone-50">
           <div className="max-w-xl mx-auto min-h-screen flex flex-col bg-white shadow-lg overflow-hidden">
             <Toaster position="bottom-center" />
             <Header />
-            <main className="flex flex-grow text-primary-dark overflow-y-auto">
+            <main className="flex flex-grow text-primary-dark overflow-y-auto bg-white">
               <Outlet />
             </main>
             <Footer />

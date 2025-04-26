@@ -23,13 +23,13 @@ const ToggleSwitch: React.FC<ToggleSwitchProps> = ({ viewMode, setViewMode }) =>
         // Apply base style and conditionally active or inactive styles
         className={`${baseStyle} ${viewMode === 'list' ? activeStyle : inactiveStyle}`}
       >
-        List
+        목록
       </button>
       <button
         onClick={() => setViewMode('new')}
         className={`${baseStyle} ${viewMode === 'new' ? activeStyle : inactiveStyle}`}
       >
-        New Recording
+        새 녹음
       </button>
     </div>
   );
